@@ -7,7 +7,7 @@
 
 ## 📊 Overall Progress Summary
 
-- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (1 / 9 Milestones Completed)
+- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (2 / 9 Milestones Completed)
 - [ ] **Phase 2: Standalone MCP Server CLI, Kanban, Gantt & Export Suite** (0 / 5 Milestones Completed)
 - [ ] **Phase 3: Decentralized P2P Sync & Zero-Knowledge Cloud Backup** (0 / 3 Milestones Completed)
 - [ ] **Phase 4: Desktop Enhancements & Mobile Production Hardening** (0 / 3 Milestones Completed)
@@ -37,35 +37,35 @@
 ---
 
 ### Milestone 2: "Carbon HUD" Theme Engine, Window Management & Golden Tests
-- [ ] **2.1 High-Density HUD Theme Extension**
-  - [ ] Implement `CarbonHUDTheme` extending Flutter's `ThemeExtension`.
-  - [ ] Define core palette tokens: `background`, `surface`, `surfaceElevated`, `accent`, `textPrimary`, `textSecondary`, `border`, `codeBg`, `danger`.
-  - [ ] Implement 7 Dark Themes:
-    - [ ] Hack The Box (Default: `#0F1923`, `#1B2738`, `#9FEF00`, `#FF3E3E`)
-    - [ ] Tokyo Night (`#1A1B26`, `#7AA2F7`)
-    - [ ] One Dark Pro (`#282C34`, `#61AFEF`)
-    - [ ] Catppuccin Mocha (`#1E1E2E`, `#CBA6F7`)
-    - [ ] Dracula (`#282A36`, `#BD93F9`, `#50FA7B`)
-    - [ ] Nord (`#2E3440`, `#88C0D0`)
-    - [ ] Gruvbox Dark (`#282828`, `#EBDBB2`, `#FE8019`)
-  - [ ] Implement 5 Light Themes:
-    - [ ] GitHub Light / Primer (`#FFFFFF`, `#F6F8FA`, `#0969DA`)
-    - [ ] Catppuccin Latte (`#EFF1F5`, `#4C4F69`, `#1E66F5`)
-    - [ ] Tokyo Night Day (`#E1E2E7`, `#3760BF`)
-    - [ ] Solarized Light (`#FDF6E3`, `#657B83`, `#268BD2`)
-    - [ ] One Light (`#FAFAFA`, `#383A42`, `#4078F2`)
-- [ ] **2.2 Typography & Nerd Font Integration**
-  - [ ] Configure **Fira Code Nerd Font** as default monospace with ligature support enabled.
-  - [ ] Configure **Inter** as default proportional body font.
-  - [ ] Implement user font selector cubit allowing system Nerd Font fallback (JetBrains Mono NF, Hack NF).
-- [ ] **2.3 Desktop Platform-Adaptive Window Management**
-  - [ ] Integrate `window_manager` for Linux, macOS, and Windows.
-  - [ ] Build custom borderless HUD title bar widget with draggable window caption area.
-  - [ ] Implement custom window controls (minimize, maximize/restore, close) matching active theme.
-  - [ ] Add breadcrumbs trail to title bar (`Notebook > Section > Page`).
-- [ ] **2.4 Theme TDD & Golden Test Suite**
-  - [ ] Unit test `ThemeCubit` transitions across all 12 palettes.
-  - [ ] Golden tests: snapshot custom window title bar, buttons, and HUD panes under Hack The Box and GitHub Light.
+- [x] **2.1 High-Density HUD Theme Extension**
+  - [x] Implement `CarbonHUDTheme` extending Flutter's `ThemeExtension`.
+  - [x] Define core palette tokens: `background`, `surface`, `surfaceElevated`, `accent`, `textPrimary`, `textSecondary`, `border`, `codeBg`, `danger`.
+  - [x] Implement 7 Dark Themes:
+    - [x] Hack The Box (Default: `#0F1923`, `#1B2738`, `#9FEF00`, `#FF3E3E`)
+    - [x] Tokyo Night (`#1A1B26`, `#7AA2F7`)
+    - [x] One Dark Pro (`#282C34`, `#61AFEF`)
+    - [x] Catppuccin Mocha (`#1E1E2E`, `#CBA6F7`)
+    - [x] Dracula (`#282A36`, `#BD93F9`, `#50FA7B`)
+    - [x] Nord (`#2E3440`, `#88C0D0`)
+    - [x] Gruvbox Dark (`#282828`, `#EBDBB2`, `#FE8019`)
+  - [x] Implement 5 Light Themes:
+    - [x] GitHub Light / Primer (`#FFFFFF`, `#F6F8FA`, `#0969DA`)
+    - [x] Catppuccin Latte (`#EFF1F5`, `#4C4F69`, `#1E66F5`)
+    - [x] Tokyo Night Day (`#E1E2E7`, `#3760BF`)
+    - [x] Solarized Light (`#FDF6E3`, `#657B83`, `#268BD2`)
+    - [x] One Light (`#FAFAFA`, `#383A42`, `#4078F2`)
+- [x] **2.2 Typography & Nerd Font Integration**
+  - [x] Configure **Fira Code Nerd Font** as default monospace with ligature support enabled.
+  - [x] Configure **Inter** as default proportional body font.
+  - [x] Implement user font selector cubit allowing system Nerd Font fallback (JetBrains Mono NF, Hack NF).
+- [x] **2.3 Desktop Platform-Adaptive Window Management**
+  - [x] Integrate `window_manager` for Linux, macOS, and Windows.
+  - [x] Build custom borderless HUD title bar widget with draggable window caption area.
+  - [x] Implement custom window controls (minimize, maximize/restore, close) matching active theme.
+  - [x] Add breadcrumbs trail to title bar (`Notebook > Section > Page`).
+- [x] **2.4 Theme TDD & Golden Test Suite**
+  - [x] Unit test `ThemeCubit` transitions across all 12 palettes.
+  - [x] Golden tests: snapshot custom window title bar, buttons, and HUD panes under Hack The Box and GitHub Light.
 
 ---
 
