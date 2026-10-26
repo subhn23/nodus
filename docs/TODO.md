@@ -7,7 +7,7 @@
 
 ## 📊 Overall Progress Summary
 
-- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (2 / 9 Milestones Completed)
+- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (3 / 9 Milestones Completed)
 - [ ] **Phase 2: Standalone MCP Server CLI, Kanban, Gantt & Export Suite** (0 / 5 Milestones Completed)
 - [ ] **Phase 3: Decentralized P2P Sync & Zero-Knowledge Cloud Backup** (0 / 3 Milestones Completed)
 - [ ] **Phase 4: Desktop Enhancements & Mobile Production Hardening** (0 / 3 Milestones Completed)
@@ -70,29 +70,29 @@
 ---
 
 ### Milestone 3: Drift SQLite DB, CRDT-Ready Schema & CAS Blob Storage
-- [ ] **3.1 Relational Database Schema Design (`nodus_core`)**
-  - [ ] Create `NotebooksTable`: `id`, `name`, `color`, `icon`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
-  - [ ] Create `SectionsTable`: `id`, `notebook_id`, `name`, `color`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
-  - [ ] Create `PagesTable`: `id`, `section_id`, `title`, `is_pinned`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
-  - [ ] Create `NoteBlocksTable`:
+- [x] **3.1 Relational Database Schema Design (`nodus_core`)**
+  - [x] Create `NotebooksTable`: `id`, `name`, `color`, `icon`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
+  - [x] Create `SectionsTable`: `id`, `notebook_id`, `name`, `color`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
+  - [x] Create `PagesTable`: `id`, `section_id`, `title`, `is_pinned`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
+  - [x] Create `NoteBlocksTable`:
     - `id` (UUID), `page_id`, `block_type` (TEXT enum), `sort_order` (REAL fractional index).
     - `content` (JSON payload string).
     - `crdt_state` (BLOB reserved for sequence CRDT deltas).
     - `created_at_hlc` (TEXT Hybrid Logical Clock), `updated_at_hlc` (TEXT).
-- [ ] **3.2 Denormalized FTS5 Full-Text Search Table**
-  - [ ] Implement `pages_fts` virtual table indexing `page_id`, `title`, `body_text`, `tags`, `code_snippets`.
-  - [ ] Write Drift queries with BM25 ranking weights (`title` 5.0x, `tags` 3.0x, `content` 1.0x).
-  - [ ] Implement snippet extraction helper with search hit highlighting.
-- [ ] **3.3 Content-Addressable Storage (CAS) Engine**
-  - [ ] Implement `BlobManager` storing physical files in `.nodus/blobs/<sha256_hash>`.
-  - [ ] Implement `BlobsTable`: `hash`, `byte_size`, `mime_type`, `original_name`, `reference_count`, `created_at`.
-  - [ ] Implement automatic deduplication logic (identical files share the same blob and increment `reference_count`).
-  - [ ] Implement orphan detection query (blobs with `reference_count <= 0`).
-- [ ] **3.4 Database TDD Suite**
-  - [ ] In-memory SQLite tests for schema creation, foreign keys, and cascading soft-deletes.
-  - [ ] Unit test fractional indexing ordering under rapid reorders.
-  - [ ] Unit test FTS5 search performance and BM25 ranking across 1,000+ mock pages.
-  - [ ] Unit test CAS blob deduplication and reference counting.
+- [x] **3.2 Denormalized FTS5 Full-Text Search Table**
+  - [x] Implement `pages_fts` virtual table indexing `page_id`, `title`, `body_text`, `tags`, `code_snippets`.
+  - [x] Write Drift queries with BM25 ranking weights (`title` 5.0x, `tags` 3.0x, `content` 1.0x).
+  - [x] Implement snippet extraction helper with search hit highlighting.
+- [x] **3.3 Content-Addressable Storage (CAS) Engine**
+  - [x] Implement `BlobManager` storing physical files in `.nodus/blobs/<sha256_hash>`.
+  - [x] Implement `BlobsTable`: `hash`, `byte_size`, `mime_type`, `original_name`, `reference_count`, `created_at`.
+  - [x] Implement automatic deduplication logic (identical files share the same blob and increment `reference_count`).
+  - [x] Implement orphan detection query (blobs with `reference_count <= 0`).
+- [x] **3.4 Database TDD Suite**
+  - [x] In-memory SQLite tests for schema creation, foreign keys, and cascading soft-deletes.
+  - [x] Unit test fractional indexing ordering under rapid reorders.
+  - [x] Unit test FTS5 search performance and BM25 ranking across 1,000+ mock pages.
+  - [x] Unit test CAS blob deduplication and reference counting.
 
 ---
 
