@@ -16,7 +16,7 @@
 
 <br/>
 
-[**Explore Specifications**](./docs/SPECIFICATION.md) • [**Phase 1 Plan (TDD)**](./docs/IMPLEMENTATION_PLAN.md) • [**Architecture**](#-system-architecture) • [**Core Features**](#-core-features) • [**Getting Started**](#-getting-started)
+[**Explore Specifications**](./docs/SPECIFICATION.md) • [**Phase 1 Plan (TDD)**](./docs/IMPLEMENTATION_PLAN.md) • [**Master TODO**](./docs/TODO.md) • [**Architecture**](#-system-architecture) • [**Core Features**](#-core-features) • [**Getting Started**](#-getting-started)
 
 </div>
 
@@ -212,6 +212,7 @@ flutter run -d android
 
 * 📄 **[Technical Specification & Architecture (SPECIFICATION.md)](./docs/SPECIFICATION.md)** — In-depth breakdown of data models, database schema, CAS deduplication, MCP protocol, and encryption algorithms.
 * 📋 **[Phase 1 Implementation Plan (IMPLEMENTATION_PLAN.md)](./docs/IMPLEMENTATION_PLAN.md)** — Test-Driven Development (TDD) milestones, test suites, and step-by-step verification flows.
+* 📝 **[Master Project TODO & Progress Tracker (TODO.md)](./docs/TODO.md)** — Granular phase-wise task lists with interactive checklists covering all 20 project milestones.
 
 ---
 
