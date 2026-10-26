@@ -7,7 +7,7 @@
 
 ## 📊 Overall Progress Summary
 
-- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (0 / 9 Milestones Completed)
+- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (1 / 9 Milestones Completed)
 - [ ] **Phase 2: Standalone MCP Server CLI, Kanban, Gantt & Export Suite** (0 / 5 Milestones Completed)
 - [ ] **Phase 3: Decentralized P2P Sync & Zero-Knowledge Cloud Backup** (0 / 3 Milestones Completed)
 - [ ] **Phase 4: Desktop Enhancements & Mobile Production Hardening** (0 / 3 Milestones Completed)
@@ -17,22 +17,22 @@
 ## 🎯 Phase 1: Core Foundation & Custom Block Editor MVP
 
 ### Milestone 1: Dart Workspace Monorepo Scaffolding & Dependencies
-- [ ] **1.1 Monorepo Workspace Configuration**
-  - [ ] Configure root `pubspec.yaml` with Dart workspace resolution for `packages/nodus_core` and `packages/nodus_mcp`.
-  - [ ] Create `packages/nodus_core` package directory and initialize pure Dart `pubspec.yaml`.
-  - [ ] Create `packages/nodus_mcp` package directory and initialize CLI executable `pubspec.yaml`.
-- [ ] **1.2 Core Dependency Graph**
-  - [ ] Add `drift`, `sqlite3`, `crypto`, `equatable`, `freezed_annotation`, `json_annotation`, `uuid` to `packages/nodus_core`.
-  - [ ] Add `build_runner`, `drift_dev`, `freezed`, `json_serializable` to `nodus_core` dev dependencies.
-  - [ ] Add `flutter_bloc`, `bloc`, `get_it`, `injectable`, `window_manager`, `multi_split_view`, `google_fonts`, `flutter_svg`, `flutter_secure_storage`, `image` to root Flutter `pubspec.yaml`.
-  - [ ] Add `bloc_test`, `mocktail`, `flutter_test`, `integration_test` to root dev dependencies.
-- [ ] **1.3 Clean Architecture Folder Structure**
-  - [ ] Setup `packages/nodus_core/lib/{domain,data,usecases}` structure.
-  - [ ] Setup `lib/core/{di,theme,window,error,utils}` in root app.
-  - [ ] Setup `lib/features/{notes,editor,storage_dash,security,tasks}` in root app.
-- [ ] **1.4 Verification**
-  - [ ] Run `flutter pub get` and verify dependency graph resolves without version conflicts on Dart 3.13 / Flutter 3.47+.
-  - [ ] Verify `nodus_core` can compile in pure Dart without any Flutter SDK imports.
+- [x] **1.1 Monorepo Workspace Configuration**
+  - [x] Configure root `pubspec.yaml` with Dart workspace resolution for `packages/nodus_core` and `packages/nodus_mcp`.
+  - [x] Create `packages/nodus_core` package directory and initialize pure Dart `pubspec.yaml`.
+  - [x] Create `packages/nodus_mcp` package directory and initialize CLI executable `pubspec.yaml`.
+- [x] **1.2 Core Dependency Graph**
+  - [x] Add `drift`, `sqlite3`, `crypto`, `equatable`, `freezed_annotation`, `json_annotation`, `uuid` to `packages/nodus_core`.
+  - [x] Add `build_runner`, `drift_dev`, `freezed`, `json_serializable` to `nodus_core` dev dependencies.
+  - [x] Add `flutter_bloc`, `bloc`, `get_it`, `window_manager`, `multi_split_view`, `google_fonts`, `flutter_svg`, `flutter_secure_storage`, `image` to root Flutter `pubspec.yaml`.
+  - [x] Add `bloc_test`, `mocktail`, `flutter_test`, `integration_test` to root dev dependencies.
+- [x] **1.3 Clean Architecture Folder Structure**
+  - [x] Setup `packages/nodus_core/lib/{domain,data,usecases}` structure.
+  - [x] Setup `lib/core/{di,theme,window,error,utils}` in root app.
+  - [x] Setup `lib/features/{notes,editor,storage_dash,security,tasks}` in root app.
+- [x] **1.4 Verification**
+  - [x] Run `flutter pub get` and verify dependency graph resolves without version conflicts on Dart 3.13 / Flutter 3.47+.
+  - [x] Verify `nodus_core` can compile in pure Dart without any Flutter SDK imports.
 
 ---
 

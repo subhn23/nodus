@@ -1,0 +1,17 @@
+name: nodus_mcp
+description: Model Context Protocol (MCP) standalone CLI server for Nodus.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.5
+resolution: workspace
+
+dependencies:
+  nodus_core:
+  args: ^2.6.0
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
+
+dev_dependencies:
+  mocktail: ^1.0.4
