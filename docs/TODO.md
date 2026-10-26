@@ -7,7 +7,7 @@
 
 ## 📊 Overall Progress Summary
 
-- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (3 / 9 Milestones Completed)
+- [ ] **Phase 1: Core Foundation & Custom Block Editor MVP** (4 / 9 Milestones Completed)
 - [ ] **Phase 2: Standalone MCP Server CLI, Kanban, Gantt & Export Suite** (0 / 5 Milestones Completed)
 - [ ] **Phase 3: Decentralized P2P Sync & Zero-Knowledge Cloud Backup** (0 / 3 Milestones Completed)
 - [ ] **Phase 4: Desktop Enhancements & Mobile Production Hardening** (0 / 3 Milestones Completed)
@@ -75,10 +75,10 @@
   - [x] Create `SectionsTable`: `id`, `notebook_id`, `name`, `color`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
   - [x] Create `PagesTable`: `id`, `section_id`, `title`, `is_pinned`, `sort_order`, `created_at_hlc`, `updated_at_hlc`, `deleted_at_hlc`.
   - [x] Create `NoteBlocksTable`:
-    - `id` (UUID), `page_id`, `block_type` (TEXT enum), `sort_order` (REAL fractional index).
+    - `id` (UUID), `pageId`, `blockType` (TEXT enum), `sortOrder` (REAL fractional index).
     - `content` (JSON payload string).
-    - `crdt_state` (BLOB reserved for sequence CRDT deltas).
-    - `created_at_hlc` (TEXT Hybrid Logical Clock), `updated_at_hlc` (TEXT).
+    - `crdtState` (BLOB reserved for sequence CRDT deltas).
+    - `createdAtHlc` (TEXT Hybrid Logical Clock), `updatedAtHlc` (TEXT).
 - [x] **3.2 Denormalized FTS5 Full-Text Search Table**
   - [x] Implement `pages_fts` virtual table indexing `page_id`, `title`, `body_text`, `tags`, `code_snippets`.
   - [x] Write Drift queries with BM25 ranking weights (`title` 5.0x, `tags` 3.0x, `content` 1.0x).
@@ -97,31 +97,31 @@
 ---
 
 ### Milestone 4: Domain Layer & Command History (Pure Dart TDD)
-- [ ] **4.1 Polymorphic Block Domain Entities**
-  - [ ] Define `sealed class NoteBlock` with Freezed:
-    - [ ] `TextBlock`: plain text, markdown formatting tokens.
-    - [ ] `HeadingBlock`: level (1, 2, 3), text.
-    - [ ] `CodeBlock`: language, code content, prompt prefix strip settings.
-    - [ ] `TerminalBlock`: ANSI log content, command string, exit code badge.
-    - [ ] `ImageBlock`: CAS blob hash, alt text, width, compression state.
-    - [ ] `TaskBlock`: raw text, parsed task entity link.
-    - [ ] `VaultBlock`: encrypted payload, hint, algorithm (`AES-256-GCM`).
-- [ ] **4.2 Reversible Command Pattern (Linear Undo/Redo)**
-  - [ ] Implement `EditorCommand` abstract interface with `execute()` and `undo()`.
-  - [ ] Implement `EditBlockContentCommand`.
-  - [ ] Implement `InsertBlockCommand` (with auto-focus management).
-  - [ ] Implement `DeleteBlockCommand` (preserves deleted block content for redo).
-  - [ ] Implement `ReorderBlockCommand` (fractional index swap).
-  - [ ] Implement `CommandHistory` managing linear undo/redo stacks per open page.
-- [ ] **4.3 Pure Dart Use Cases**
-  - [ ] `CreateNotebookUseCase`, `GetNotebookHierarchyUseCase`.
-  - [ ] `SavePageBlocksUseCase` (atomic SQLite batch-save for dirty blocks).
-  - [ ] `SearchNotesFtsUseCase` (FTS query and snippet highlighting).
-  - [ ] `DetectSecretsUseCase` (regex inspection).
-  - [ ] `ParseTasksUseCase` (inline task extraction).
-- [ ] **4.4 Domain TDD Suite**
-  - [ ] Unit test all use cases using `mocktail` for repository interfaces.
-  - [ ] Unit test `CommandHistory` undo/redo sequences across complex multi-block edits.
+- [x] **4.1 Polymorphic Block Domain Entities**
+  - [x] Define `sealed class NoteBlock`:
+    - [x] `TextBlock`: plain text, markdown formatting tokens.
+    - [x] `HeadingBlock`: level (1, 2, 3), text.
+    - [x] `CodeBlock`: language, code content, prompt prefix strip settings.
+    - [x] `TerminalBlock`: ANSI log content, command string, exit code badge.
+    - [x] `ImageBlock`: CAS blob hash, alt text, width, compression state.
+    - [x] `TaskBlock`: raw text, parsed task entity link.
+    - [x] `VaultBlock`: encrypted payload, hint, algorithm (`AES-256-GCM`).
+- [x] **4.2 Reversible Command Pattern (Linear Undo/Redo)**
+  - [x] Implement `EditorCommand` abstract interface with `execute()` and `undo()`.
+  - [x] Implement `EditBlockCommand`.
+  - [x] Implement `InsertBlockCommand` (with auto-focus management).
+  - [x] Implement `DeleteBlockCommand` (preserves deleted block content for redo).
+  - [x] Implement `MoveBlockCommand` (fractional index swap).
+  - [x] Implement `CommandHistory` managing linear undo/redo stacks per open page.
+- [x] **4.3 Pure Dart Use Cases**
+  - [x] `CreateNotebookUseCase`, `GetNotebookHierarchyUseCase`.
+  - [x] `SavePageBlocksUseCase` (atomic SQLite batch-save for dirty blocks).
+  - [x] `SearchNotesFtsUseCase` (FTS query and snippet highlighting).
+  - [x] `DetectSecretsUseCase` (regex inspection).
+  - [x] `ParseTasksUseCase` (inline task extraction).
+- [x] **4.4 Domain TDD Suite**
+  - [x] Unit test all use cases using `mocktail` for repository interfaces.
+  - [x] Unit test `CommandHistory` undo/redo sequences across complex multi-block edits.
 
 ---
 
